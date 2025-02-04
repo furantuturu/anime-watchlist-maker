@@ -5,4 +5,20 @@
 @theme {
     --color-new-dark: #181818;
     --color-new-light: #f2f2f2;
+    --color-new-dark2: #333333;
+}
+
+@layer components {
+    .link-styles {
+        @apply hover:bg-blue-300 dark:hover:bg-amber-200 border-blue-300 dark:border-amber-200 rounded-lg ease-in-out duration-150 py-1.5 px-2;
+    }
+    .link-text-styles {
+        @apply [&.active]:font-bold text-new-light dark:text-new-dark;
+    }
+    .search-inp-styles {
+        @apply block w-full p-4 ps-10 text-sm text-new-dark border-2 border-blue-300 rounded-xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-new-dark2 dark:border-yellow-300 dark:placeholder-gray-400 dark:text-new-light dark:focus:ring-yellow-400 dark:focus:border-yellow-400 outline-none;
+    }
+    .search-btn-styles {
+        @apply text-new-light dark:text-new-dark absolute end-2.5 bottom-2.5 bg-blue-400 dark:bg-yellow-400 hover:bg-blue-300 focus:ring-3 focus:outline-none focus:ring-blue-300 font-medium rounded-xl text-sm px-4 py-2 dark:hover:bg-yellow-300 dark:focus:ring-yellow-200 ease-in-out duration-150 cursor-pointer;
+    }
 }

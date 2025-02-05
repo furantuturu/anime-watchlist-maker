@@ -15,7 +15,7 @@ export const Route = createRootRouteWithContext<QueryClientContext>()({
 function RootComponent() {
     return (
         <>
-            <nav className="bg-blue-400 dark:bg-yellow-400 ease-in-out duration-150">
+            <nav className="bg-blue-400 dark:bg-yellow-400">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-center md:justify-end mx-auto p-4">
                     <ul className="flex font-medium text-xl mr-7 md:space-x-8 rtl:space-x-reverse">
                         <li className="link-styles">

@@ -1,5 +1,5 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, memo } from "react";
 import { useDebounce } from "use-debounce";
 import SearchResult from "../components/SearchResult";
 
@@ -16,7 +16,7 @@ function Search() {
     return (
         <>
             <div className="my-5 py-4">
-                <form className="max-w-md mx-auto">   
+                <div className="max-w-md mx-auto">   
                     <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                     <div className="relative">
                         <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -27,7 +27,7 @@ function Search() {
                             onChange={(e) => setSearchString(e.target.value)}
                         />
                     </div>
-                </form>
+                </div>
                 <hr className="mt-10 mb-20 text-blue-300 dark:text-yellow-300" />
                 <SearchResult debouncedSearchString={debouncedSearchString} />
             </div>

@@ -3,6 +3,8 @@ import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import './index.css'
 
+localStorage.removeItem("searchString")
+
 import { routeTree } from './routeTree.gen'
 
 const queryClient = new QueryClient()

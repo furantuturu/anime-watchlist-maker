@@ -8,10 +8,10 @@ type DBSearchString = { debouncedSearchString: string }
 
 const SearchResult = ({ debouncedSearchString }: DBSearchString) => {
     const { data, isFetching } = useQuery(animeQueryOptions(debouncedSearchString))
-
+    
     const isLocalDark = localStorage.getItem('color-theme') === 'dark'
     const isPreferColorSchemeDark = (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-
+    
     return (
         <>
             {isFetching && <PropagateLoader size={15} color={isLocalDark || isPreferColorSchemeDark ? '#ffdf20' : '#8ec5ff'} className="text-center" />}
@@ -21,8 +21,30 @@ const SearchResult = ({ debouncedSearchString }: DBSearchString) => {
                     return (
                         <li key={anime.title} className="card-li-styles">
                             <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-50 md:rounded-none md:rounded-s-lg" src={anime.picture} alt={anime.title} />
-                            <div className="flex flex-col justify-between p-4 leading-normal">
-                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{anime.title}</h5>
+                            <div className="flex flex-col justify-center p-5 leading-normal">
+                                <h3 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{anime.title}</h3>
+                                <div>
+                                    <h5 className="font-bold">Type</h5>
+                                    <p>{anime.type}</p>
+                                </div>
+                                <div>
+                                    <h5 className="font-bold">Episodes</h5>
+                                    <p>{anime.episodes}</p>
+                                </div>
+                                <div>
+                                    <h5 className="font-bold">Status</h5>
+                                    <p>{anime.status}</p>
+                                </div>
+                                <div>
+                                    <h5 className="font-bold">Season</h5>
+                                    <p>{anime.animeSeason.season} {anime.animeSeason.year}</p>
+                                </div>
+                                <div>
+                                    <h5 className="font-bold">Tags</h5>
+                                    <div className="tags">
+                                        {anime.tags.map(tag => <span className="p-1" key={tag}>{tag}</span>)}
+                                    </div>
+                                </div>
                             </div>
                         </li>
                     )

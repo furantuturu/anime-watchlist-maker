@@ -4,6 +4,5 @@ import { fetchAnime } from "./searchAnime";
 export const animeQueryOptions = (searchString: string) => queryOptions({
     queryKey: ['anime', searchString],
     queryFn: () => fetchAnime(searchString),
-    enabled: searchString !== "",
     staleTime: Infinity
 })

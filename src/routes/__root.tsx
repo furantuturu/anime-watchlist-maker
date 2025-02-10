@@ -34,7 +34,7 @@ function RootComponent() {
             </nav>
             <Outlet />
             <ReactQueryDevtools buttonPosition='top-left' />
-            <TanStackRouterDevtools position='bottom-right' />
+            {/* <TanStackRouterDevtools position='bottom-right' /> */}
         </>
     )
 }

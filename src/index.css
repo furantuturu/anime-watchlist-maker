@@ -22,6 +22,7 @@
         @apply text-new-light dark:text-new-dark absolute end-2.5 bottom-2.5 bg-blue-400 dark:bg-yellow-400 hover:bg-blue-300 focus:ring-3 focus:outline-none focus:ring-blue-300 font-medium rounded-xl text-sm px-4 py-2 dark:hover:bg-yellow-300 dark:focus:ring-yellow-200 ease-in-out duration-150 cursor-pointer;
     }
     .card-li-styles {
-        @apply mx-10 my-10 md:mx-auto flex flex-col items-center rounded-lg shadow-sm md:flex-row md:max-w-3xl bg-white hover:bg-gray-100 dark:bg-new-dark2 dark:hover:bg-gray-700 border-2 border-blue-300 dark:border-amber-300;
+        @apply mx-15 my-10 flex flex-col rounded-lg shadow-sm md:flex-row bg-white hover:bg-gray-100 dark:bg-new-dark2 dark:hover:bg-gray-700 border-2 border-blue-300 dark:border-amber-300;
+        overflow-wrap: break-word
     }
 }

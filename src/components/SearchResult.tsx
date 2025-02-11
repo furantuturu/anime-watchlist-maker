@@ -20,8 +20,8 @@ const SearchResult = ({ debouncedSearchString }: DBSearchString) => {
                 {data?.map((anime: AnimeData) => {
                     return (
                         <li key={anime.title} className="card-li-styles">
-                            <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-50 md:rounded-none md:rounded-s-lg" src={anime.picture} alt={anime.title} />
-                            <div className="flex flex-col justify-center p-5 leading-normal">
+                            <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-80 md:rounded-none md:rounded-s-lg" src={anime.picture} alt={anime.title} />
+                            <div className="flex flex-col justify-center text-center md:text-left p-5 leading-normal">
                                 <h3 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{anime.title}</h3>
                                 <div>
                                     <h5 className="font-bold">Type</h5>
@@ -41,8 +41,14 @@ const SearchResult = ({ debouncedSearchString }: DBSearchString) => {
                                 </div>
                                 <div>
                                     <h5 className="font-bold">Tags</h5>
-                                    <div className="tags">
-                                        {anime.tags.map(tag => <span className="p-1" key={tag}>{tag}</span>)}
+                                    <div className="leading-relaxed">
+                                        {anime.tags.map(tag => <span className="pr-2 pb-1 hover:underline underline-offset-4" key={tag}>{tag}</span>)}
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 className="font-bold">Sources</h5>
+                                    <div className="leading-relaxed">
+                                        {anime.sources.map(source => <li><a href={source} target="_blank"></a>{source}</li>)}
                                     </div>
                                 </div>
                             </div>

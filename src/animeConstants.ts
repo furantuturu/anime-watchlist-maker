@@ -28,3 +28,14 @@ export interface AnimeData {
 }
 
 export type AnimeDataArray = AnimeData[]
+
+export const provider = {
+    Anilist: 'https://anilist.co',
+    AniDB: 'https://anidb.net',
+    AnimePlanet: 'https://anime-planet.com',
+    AniSearch: 'https://anisearch.com',
+    LiveChart: 'https://livechart.me',
+    Kitsu: 'https://kitsu.app',
+    MyAnimeList: 'https://myanimelist.net',
+    NotifyMoe: 'https://notify.moe',
+};

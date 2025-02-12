@@ -15,7 +15,7 @@ export const Route = createRootRouteWithContext<QueryClientContext>()({
 function RootComponent() {
     return (
         <>
-            <nav className="bg-blue-400 dark:bg-yellow-400">
+            <nav className="bg-blue-400 dark:bg-yellow-400" id="nav">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-center md:justify-end mx-auto p-4">
                     <ul className="flex font-medium text-xl mr-7 md:space-x-8 rtl:space-x-reverse">
                         <li className="link-styles">
@@ -35,6 +35,9 @@ function RootComponent() {
             <Outlet />
             <ReactQueryDevtools buttonPosition='top-left' />
             {/* <TanStackRouterDevtools position='bottom-right' /> */}
+            <div className="">
+                <a className="back-to-top-styles" href="#nav">Back To Top</a>
+            </div>
         </>
     )
 }

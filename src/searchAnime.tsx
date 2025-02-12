@@ -1,5 +1,5 @@
 
-import { AnimeDataArray, AnimeData } from "./animeConstants";
+import { AnimeDataArray, AnimeData } from "./constants";
 
 export const fetchAnime = async (searchString: string) => {
     const res = await fetch('https://corsproxy.io/?url=https://github.com/manami-project/anime-offline-database/raw/master/anime-offline-database-minified.json')

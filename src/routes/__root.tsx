@@ -35,9 +35,7 @@ function RootComponent() {
             <Outlet />
             <ReactQueryDevtools buttonPosition='top-left' />
             {/* <TanStackRouterDevtools position='bottom-right' /> */}
-            <div className="">
-                <a className="back-to-top-styles" href="#nav">Back To Top</a>
-            </div>
+            <a className="back-to-top-styles" href="#nav">Back To Top</a>
         </>
     )
 }

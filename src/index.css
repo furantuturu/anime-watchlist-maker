@@ -9,6 +9,16 @@
 }
 
 @layer components {
+    .back-to-top-styles {
+        @apply px-3 py-2 text-sm font-medium text-center text-new-light dark:text-new-dark bg-blue-400 rounded-lg outline-none dark:bg-yellow-400 cursor-pointer hover:bg-blue-300 dark:hover:bg-yellow-200 duration-100 ease-in-out;
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .darkmode-btn-styles {
+        @apply text-new-light dark:text-new-dark text-sm p-2.5 cursor-pointer hover:bg-blue-300 dark:hover:bg-amber-200 border-blue-300 dark:border-amber-200 rounded-lg ease-in-out duration-150;
+    }
     .link-styles {
         @apply hover:bg-blue-300 dark:hover:bg-amber-200 border-blue-300 dark:border-amber-200 rounded-lg ease-in-out duration-150 py-1.5 px-2;
     }
@@ -22,10 +32,22 @@
         @apply text-new-light dark:text-new-dark absolute end-2.5 bottom-2.5 bg-blue-400 dark:bg-yellow-400 hover:bg-blue-300 focus:ring-3 focus:outline-none focus:ring-blue-300 font-medium rounded-xl text-sm px-4 py-2 dark:hover:bg-yellow-300 dark:focus:ring-yellow-200 ease-in-out duration-150 cursor-pointer;
     }
     .card-li-styles {
-        @apply mx-15 my-10 flex flex-col rounded-lg shadow-sm md:flex-row md:max-w-5xl md:mx-auto bg-white hover:bg-gray-100 dark:bg-new-dark2 dark:hover:bg-gray-800 border-2 border-blue-300 dark:border-amber-300;
+        @apply mx-15 my-10 flex flex-col rounded-lg shadow-sm md:flex-row md:max-w-5xl md:mx-auto bg-white dark:bg-new-dark2 border-2 border-blue-300 dark:border-amber-300;
         overflow-wrap: break-word;
     }
-    .card-li-styles > img {
-        width: 150%;
+    .card-li-img-styles {
+        @apply object-contain w-full rounded-t-lg h-96 md:h-auto md:w-80 md:rounded-none md:rounded-s-lg;
+    }
+    .add-watchlist-btn-styles {
+        @apply px-3 py-2 text-sm font-medium text-center text-new-light dark:text-new-dark bg-blue-400 rounded-lg outline-none dark:bg-yellow-400 cursor-pointer hover:bg-blue-300 dark:hover:bg-yellow-200 duration-100 ease-in-out;
+    }
+    .expand-tag-btn-styles {
+        @apply ml-2 px-3 py-2 text-xs font-medium text-center text-new-light dark:text-new-dark bg-blue-400 rounded-lg outline-none dark:bg-yellow-400 cursor-pointer hover:bg-blue-300 dark:hover:bg-yellow-200 duration-100 ease-in-out;
+    }
+    .tag-styles {
+        @apply text-sm pr-2 pb-1 hover:underline underline-offset-4;
+    }
+    .source-styles {
+        @apply mr-1 px-1 text-sm rounded-sm border-1 border-blue-400 dark:border-yellow-400 hover:bg-blue-200 dark:hover:bg-yellow-200 dark:hover:text-new-dark duration-100 ease-in-out;
     }
 }

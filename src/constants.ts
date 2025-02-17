@@ -27,8 +27,6 @@ export interface AnimeData {
     tags: string[]
 }
 
-export type AnimeDataArray = AnimeData[]
-
 export const providers = new Map([
     ['anilist.co', 'AniList'],
     ['anidb.net', 'AniDB'],

@@ -17,6 +17,7 @@ const SearchResult = ({ searchString }: DBSearchString) => {
     }, [data])
 
     if (isFetching) return <PropagateLoader size={15} color={isLocalDark || isPreferColorSchemeDark ? '#ffdf20' : '#8ec5ff'} className="text-center" />
+    if (data!.length < 1) return <p className="text-center font-bold p-2 text-blue-400 dark:text-yellow-300">Anime not found...</p>
 
     return (
         <ul>

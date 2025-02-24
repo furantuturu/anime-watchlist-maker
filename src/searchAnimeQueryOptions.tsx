@@ -2,7 +2,8 @@ import { queryOptions } from "@tanstack/react-query";
 import { fetchAnime } from "./searchAnime";
 
 export const animeQueryOptions = (searchString: string) => queryOptions({
-    queryKey: ['anime', searchString],
+    queryKey: ['anime', searchString.trim().toLowerCase()],
     queryFn: () => fetchAnime(searchString),
-    staleTime: Infinity
+    staleTime: Infinity,
+    placeholderData: (prev) => prev
 })

@@ -21,7 +21,7 @@ const SearchResult = ({ searchString }: DBSearchString) => {
 
     return (
         <ul>
-            {data?.slice(0, 5).map((anime: AnimeData) => {
+            {data!.slice(0, 5).map((anime: AnimeData) => {
                 return <AnimeCard key={anime.title} anime={anime} />
             })}
             {expand && <hr className="my-10 text-blue-300 dark:text-yellow-300" />}

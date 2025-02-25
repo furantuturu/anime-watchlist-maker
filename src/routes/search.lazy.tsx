@@ -21,11 +21,9 @@ function Search() {
                 >
                     Search
                 </label>
-                <div className="relative flex justify-between items-center gap-3">
+                <div className="relative flex flex-col md:flex-row justify-between items-center gap-3">
                     <div className="grow">
-                        <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                            <ReactSVG className="w-4 h-4 text-blue-400 dark:text-yellow-300" src="/search-icon.svg" />
-                        </div>
+                        <ReactSVG className="absolute mt-5 ml-4 w-4 h-4 text-blue-400 dark:text-yellow-300 pointer-events-none" src="/search-icon.svg" />
                         <SearchInput setSearchString={setSearchString} />
                     </div>
                     <FilterDropDown />

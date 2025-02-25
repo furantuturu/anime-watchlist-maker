@@ -56,7 +56,16 @@
     .filter-dd-styles {
         @apply text-new-light dark:text-new-dark bg-blue-400 hover:bg-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-yellow-400 dark:hover:bg-amber-200 cursor-pointer duration-100;
     }
-    .dd-box-styles {
-        @apply z-10 w-48 bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-new-dark2 dark:divide-gray-600 absolute mt-2 origin-top-left ease-out duration-100 border-2 border-blue-300 dark:border-yellow-400;
+    .dd-cbox-styles {
+        @apply z-10 w-48 bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-new-dark2 dark:divide-gray-600 absolute -translate-x-12 md:translate-x-0 mt-2 origin-top-left ease-out duration-100 border-2 border-blue-300 dark:border-yellow-400;
+    }
+    .dd-cbox-label-styles {
+        @apply p-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300 cursor-pointer;
+    }
+    .hvr-dd-box-styles {
+        @apply flex items-center justify-between px-4 py-1 text-sm font-medium text-gray-900 dark:text-gray-300 cursor-pointer;
+    }
+    .hvr-dd-styles {
+        @apply z-10 absolute md:-right-[97%] md:top-12 bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-new-dark2 border-2 border-blue-300 dark:border-yellow-400 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 origin-top-left ease-out duration-100;
     }
 }

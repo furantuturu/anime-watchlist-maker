@@ -9,14 +9,14 @@ import ExpandedAnimeCard from "./ExpandedAnimeCard";
 type DBSearchString = { searchString: string }
 
 const SearchResult = ({ searchString }: DBSearchString) => {
-    const { data, isFetching } = useQuery(animeQueryOptions(searchString))
+    const { data, isFetching, isPending } = useQuery(animeQueryOptions(searchString))
     const [expand, setExpand] = useState(false)
 
     useEffect(() => {
         setExpand(false)
     }, [data])
 
-    if (isFetching) return <PropagateLoader size={15} color={isLocalDark || isPreferColorSchemeDark ? '#ffdf20' : '#8ec5ff'} className="text-center" />
+    if (isFetching || isPending) return <PropagateLoader size={15} color={isLocalDark || isPreferColorSchemeDark ? '#ffdf20' : '#8ec5ff'} className="text-center" />
     if (data!.length < 1) return <p className="text-center font-bold p-2 text-blue-400 dark:text-yellow-300">Anime not found...</p>
 
     return (

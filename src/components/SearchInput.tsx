@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useDebounce } from 'use-debounce'
+import { useDebounce } from "use-debounce"
 
 type SetSearchStr = { setSearchString: React.Dispatch<React.SetStateAction<string>> }
 
@@ -9,8 +9,8 @@ const SearchInput = ({ setSearchString }: SetSearchStr) => {
     const [debouncedString] = useDebounce(searchChar, 500)
 
     useEffect(() => {
-        setSearchString(searchChar)
-        localStorage.setItem("searchString", searchChar)
+        setSearchString(debouncedString)
+        localStorage.setItem("searchString", debouncedString)
     }, [debouncedString])
 
     return (

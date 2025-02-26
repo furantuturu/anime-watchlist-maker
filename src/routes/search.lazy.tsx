@@ -1,16 +1,17 @@
 import { createLazyFileRoute } from '@tanstack/react-router'
-import { useState, memo } from 'react'
+import { useState } from 'react'
 import SearchResult from '../components/SearchResult'
 import SearchInput from '../components/SearchInput'
 import { ReactSVG } from 'react-svg'
 import FilterDropDown from '../components/FilterDropDown'
 
 export const Route = createLazyFileRoute('/search')({
-    component: memo(Search)
+    component: Search
 })
 
 function Search() {
     const [searchString, setSearchString] = useState('')
+    const [filterObj, setFilterObj] = useState()
 
     return (
         <div className="my-5 py-4">

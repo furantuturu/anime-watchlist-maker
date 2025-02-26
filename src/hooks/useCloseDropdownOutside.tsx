@@ -1,11 +1,12 @@
 import { RefObject, useCallback, useEffect } from "react"
 
-export default function useCloseDropdownOutside(dropdownRef: RefObject<HTMLDivElement>, setOpen: React.Dispatch<React.SetStateAction<boolean>>, open: boolean) {
+export default function useCloseDropdownOutside(dropdownRef: RefObject<HTMLDivElement>, setOpenMainDD: React.Dispatch<React.SetStateAction<boolean>>, setOpenTypeDD: React.Dispatch<React.SetStateAction<boolean>>, openMainDD: boolean) {
     const closeDropdownOutside = useCallback((e: MouseEvent) => {
-        if (dropdownRef.current && open && !dropdownRef.current?.contains((e.target as Node))) {
-            setOpen(false)
+        if (dropdownRef.current && openMainDD && !dropdownRef.current?.contains((e.target as Node))) {
+            setOpenMainDD(false)
+            setOpenTypeDD(false)
         }
-    }, [open])
+    }, [openMainDD])
 
     useEffect(() => {
         document.addEventListener('mousedown', closeDropdownOutside)

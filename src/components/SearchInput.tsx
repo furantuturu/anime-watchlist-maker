@@ -6,7 +6,7 @@ type SetSearchStr = { setSearchString: React.Dispatch<React.SetStateAction<strin
 const SearchInput = ({ setSearchString }: SetSearchStr) => {
     const [searchChar, setSearchChar] = useState(localStorage.getItem("searchString") ?? '')
     
-    const [debouncedString] = useDebounce(searchChar, 500)
+    const [debouncedString] = useDebounce(searchChar, 750)
 
     useEffect(() => {
         setSearchString(debouncedString)
@@ -22,7 +22,6 @@ const SearchInput = ({ setSearchString }: SetSearchStr) => {
             required
             value={searchChar}
             onChange={(e) => setSearchChar(e.target.value)}
-            autoComplete="on"
         />
     )
 }

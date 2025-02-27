@@ -16,12 +16,6 @@ function Search() {
     return (
         <div className="my-5 py-4">
             <div className="max-w-md mx-auto">
-                <label
-                    htmlFor="default-search"
-                    className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-                >
-                    Search
-                </label>
                 <div className="relative flex flex-col md:flex-row justify-between items-center gap-3">
                     <div className="grow">
                         <ReactSVG className="absolute mt-5 ml-4 w-4 h-4 text-blue-400 dark:text-yellow-300 pointer-events-none" src="/search-icon.svg" />

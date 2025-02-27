@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { animeQueryOptions } from "../searchAnimeQueryOptions";
 import { PropagateLoader } from "react-spinners";
 import { AnimeData, isLocalDark, isPreferColorSchemeDark } from "../constants";
-import { memo, useEffect, useState} from "react";
+import { useEffect, useState} from "react";
 import AnimeCard from "./AnimeCard";
 import ExpandedAnimeCard from "./ExpandedAnimeCard";
 
@@ -24,15 +24,15 @@ const SearchResult = ({ searchString }: DBSearchString) => {
             {data!.slice(0, 5).map((anime: AnimeData) => {
                 return <AnimeCard key={anime.title} anime={anime} />
             })}
-            {expand && <hr className="my-10 text-blue-300 dark:text-yellow-300" />}
+            {expand && data!.length >= 5 && <hr className="my-10 text-blue-300 dark:text-yellow-300" />}
             {expand && <ExpandedAnimeCard data={data} />}
-            <div className={`text-center mb-10 ${!data ? "hidden" : ''}`}>
+            {data!.length >= 5 && <div className={`text-center mb-10 ${!data ? "hidden" : ''}`}>
                 <small onClick={() => setExpand(prev => !prev)} className="font-bold p-2 text-blue-400 dark:text-yellow-300 cursor-pointer hover:underline">
                     {!expand ? "Show More..." : "Show Less..."}
                 </small>
-            </div>
+            </div>}
         </ul>
     )
 }
 
-export default memo(SearchResult)
+export default SearchResult

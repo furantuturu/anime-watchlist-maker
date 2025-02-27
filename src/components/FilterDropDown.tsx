@@ -1,4 +1,4 @@
-import { memo, RefObject, useRef, useState } from "react"
+import { RefObject, useRef, useState } from "react"
 import { ReactSVG } from "react-svg"
 import useCloseDropdownOutside from "../hooks/useCloseDropdownOutside"
 import AnimeTypeCBox from "./AnimeTypeCBox"
@@ -46,4 +46,4 @@ const FilterDropDown = () => {
     )
 }
 
-export default memo(FilterDropDown)
+export default FilterDropDown

@@ -1,4 +1,3 @@
-import { memo } from 'react'
 import { AnimeData } from '../constants'
 import Sources from './Sources'
 import Tags from './Tags'
@@ -39,4 +38,4 @@ const AnimeCard = ({ anime }: Anime) => {
     )
 }
 
-export default memo(AnimeCard)
+export default AnimeCard

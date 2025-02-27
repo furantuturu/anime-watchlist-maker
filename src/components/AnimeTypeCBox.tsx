@@ -1,5 +1,3 @@
-import { memo } from "react"
-
 type AnimeType = { animeType: string }
 
 const AnimeTypeCBox = ({ animeType }: AnimeType) => {
@@ -13,4 +11,4 @@ const AnimeTypeCBox = ({ animeType }: AnimeType) => {
     )
 }
 
-export default memo(AnimeTypeCBox)
+export default AnimeTypeCBox

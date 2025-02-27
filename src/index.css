@@ -10,11 +10,7 @@
 
 @layer components {
     .back-to-top-styles {
-        @apply px-3 py-2 text-sm font-medium text-center text-new-light dark:text-new-dark bg-blue-400 rounded-lg outline-none dark:bg-yellow-400 cursor-pointer hover:bg-blue-300 dark:hover:bg-yellow-200 duration-100 ease-in-out;
-        position: fixed;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
+        @apply px-3 py-2 text-sm font-medium text-center text-new-light dark:text-new-dark bg-blue-400 rounded-lg outline-none dark:bg-yellow-400 cursor-pointer hover:bg-blue-300 dark:hover:bg-yellow-200 duration-200 ease-in-out fixed bottom-[10px] right-[10px];
     }
     .darkmode-btn-styles {
         @apply text-new-light dark:text-new-dark text-sm p-2.5 cursor-pointer hover:bg-blue-300 dark:hover:bg-amber-200 border-blue-300 dark:border-amber-200 rounded-lg ease-in-out duration-150;

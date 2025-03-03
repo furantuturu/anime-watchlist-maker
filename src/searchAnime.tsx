@@ -1,20 +1,36 @@
 
 import { AnimeData } from "./constants";
 
+let controller: AbortController | undefined
+
 export const fetchAnime = async (searchString: string) => {
-    const res = await fetch('https://corsproxy.io/?url=https://github.com/manami-project/anime-offline-database/raw/master/anime-offline-database-minified.json')
-    const data = await res.json()
+    
+    if (controller) {
+        controller.abort()
+    }
 
-    const animeDatas: AnimeData[] = data.data
-    const filterData: AnimeData[] = animeDatas.filter((anime: AnimeData) => {
-        if (!searchString || !anime) return false
+    controller = new AbortController()
 
-        const keywords = searchString.trim().toLowerCase().split(' ')
-        return keywords.every((kw: string) => anime.synonyms.find(title => {
-            const reg = new RegExp(kw, 'gi')
-            return title.match(reg)
-        })) && !anime.tags.includes("adult")
-    })
+    try {
+        const res = await fetch('https://corsproxy.io/?url=https://github.com/manami-project/anime-offline-database/raw/master/anime-offline-database-minified.json', {
+            signal: controller.signal
+        })
 
-    return filterData.slice(0, 20)
+        const data = await res.json()
+    
+        const animeDatas: AnimeData[] = data.data
+        const filterData: AnimeData[] = animeDatas.filter((anime: AnimeData) => {
+            if (!searchString || !anime) return false
+    
+            const keywords = searchString.trim().toLowerCase().split(' ')
+            return keywords.every((kw: string) => anime.synonyms.find(title => {
+                const reg = new RegExp(kw, 'gi')
+                return title.match(reg)
+            })) && !anime.tags.includes("adult")
+        })
+
+        return filterData.slice(0, 20)
+    } catch (error) {
+        console.log("Fetch error: ", error)
+    }
 }
